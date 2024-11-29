@@ -1,8 +1,15 @@
 import React from 'react'
+import Navbar from '../Navbar/Navbar'
+import Slide from './Slide'
+import Catagories from '../Catagories'
 
 const HomePage = () => {
   return (
-    <div>This home page</div>
+    <>
+      <Navbar></Navbar>
+      <Slide></Slide>
+      <Catagories></Catagories>
+    </>
   )
 }
 
