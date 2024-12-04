@@ -71,6 +71,10 @@
                     background-color: $lightgrey;
                 }
             }
+            .selected {
+                border: 2px solid $pinkred;
+                background-color: $lightgrey;
+              }
         }
        .type-list{
         display: flex;
@@ -102,6 +106,10 @@
                 background-color: $lightgrey;
             }
         }
+        .selected {
+            border: 2px solid $pinkred;
+            background-color: $lightgrey;
+          }
        } 
        .full{
         max-width: 700px;
@@ -334,7 +342,14 @@
             .price{
                 width: 200px;
             }
+            
         }
+
+        .selected {
+            border: 2px solid $pinkred;
+            background-color: $lightgrey;
+          }
+        
     }
     .submit_btn{
         margin-top: 40px;
