@@ -1,38 +1,51 @@
 @import "./breakpoints.scss";
 @import "./variables.scss";
 
-.categories_list{
+.categories_list {
     padding: 50px 80px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 60px;
-     @include sm{
-        padding: 50px 20px;
-     }
 
-     .category{
+    @include sm {
+        padding: 50px 20px;
+    }
+
+    .category {
         display: flex;
         flex-direction: column;
         align-items: center;
         color: $darkgrey;
         cursor: pointer;
 
-        &_icon{
+        &_icon {
             font-size: 30px;
         }
 
-        p{
+        p {
             font-size: 18px;
             font-weight: 700;
         }
 
-        &:hover{
+        &:hover {
             color: $pinkred;
         }
-     }
+    }
 
-     .selected{
+    .selected {
         color: $pinkred;
-     }
+    }
+}
+
+.listings{
+    padding: 0 60px 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+
+    @include lg{
+        padding: 0 20px 120px;
+    }
 }

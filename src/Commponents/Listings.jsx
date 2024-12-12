@@ -27,7 +27,7 @@ const Listings = () => {
 
             if (!response.ok) {
                 throw new Error(`Error: ${response.statusText}`);
-              }
+            }
 
             const data = await response.json();
             dispatch(setListings({ listings: data }));
@@ -44,14 +44,25 @@ const Listings = () => {
     console.log(listings)
 
     return (
-        <div className="categories_list">
-            {categories?.map((category, index) => (
-                <div className="category" key={index} onClick={() => setSelectedCategory(category.label)}>
-                    <div className="category_icon">{category.icon}</div>
-                    <p>{category.label}</p>
+        <>
+            <div className="categories_list">
+                {categories?.map((category, index) => (
+                    <div className={`category ${category.label === selectedCategory ? "selected" : ""}`} key={index} onClick={() => setSelectedCategory(category.label)}>
+                        <div className="category_icon">{category.icon}</div>
+                        <p>{category.label}</p>
+                    </div>
+                ))}
+            </div>
+
+            {loading ? (<Loader></Loader>
+            ) : (
+                <div className="listings">
+                    {listings.map(({ _id, creator, listingPhotoPaths, city, province, country, category, type, price, booking = false }) => (<ListingCard
+                        listingId={_id} creator={creator} listingPhotoPaths={listingPhotoPaths} city={city} province={province} country={country} category={category} type={type} price={price} booking={booking}
+                    />))}
                 </div>
-            ))}
-        </div>
+            )}
+        </>
     )
 }
 

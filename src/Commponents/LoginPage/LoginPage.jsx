@@ -48,7 +48,7 @@ const LoginPage = () => {
   return (
     <div className="login">
       <div className="login_content">
-        <form className='login_content_from' onSubmit={handleSubmitLogin}>
+        <form className='login_content_form' onSubmit={handleSubmitLogin}>
           <input type="email" placeholder='Email' value={email} onChange={(e)=> setEmail(e.target.value)} required />
           <input type="password" placeholder='Password' value={password} onChange={(e)=> setPassword(e.target.value)} required />
           <button type='submit'>LOG IN</button>
