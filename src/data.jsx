@@ -44,7 +44,7 @@ export const categories = [
   },
   {
     img: "assets/flat.jpg",
-    label: "Flats",
+    label: "Apartment",
     icon: <PiBuildingApartmentBold />,
     description: "This property is close to the beach!",
   },

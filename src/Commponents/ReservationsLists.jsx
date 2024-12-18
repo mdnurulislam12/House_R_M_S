@@ -12,6 +12,8 @@ const ReservationsLists = () => {
     const userId = useSelector((state)=> state.user._id)
     const reservationList = useSelector((state)=> state.user.reservationList)
 
+    console.log(reservationList)
+
     const dispatch = useDispatch()
 
     const getReservationList = async ()=>{
@@ -39,7 +41,8 @@ const ReservationsLists = () => {
      <h1 className="title-list">Your Reservation List</h1>
      <div className="list">
         {
-            reservationList?.map(({listingId, hostId, startDate, endDate, totalPrice, booking=true})=><ListingCard
+            reservationList?.map(({coustomerId, listingId, hostId, startDate, endDate, totalPrice, booking=true})=><ListingCard
+                coustomerId={coustomerId._id}
                 listingId={listingId._id}
                 creator={hostId._id}
                 listingPhotoPaths={listingId.listingPhotoPaths}
@@ -47,7 +50,9 @@ const ReservationsLists = () => {
                 province={listingId.province}
                 country={listingId.country}
                 category={listingId.category}
-
+                firstName={coustomerId.firstName}
+                lastName={coustomerId.lastName}
+                number={coustomerId.number}
                 startDate={startDate}
                 endDate={endDate}
                 totalPrice={totalPrice}

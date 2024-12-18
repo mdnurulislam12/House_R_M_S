@@ -11,6 +11,7 @@ import ListingCard from './ListingCard'
 const CategoryPage = () => {
     const [loading, setLoading] = useState(true)
     const {category} = useParams()
+    console.log(category)
 
     const listings = useSelector((state)=>state.listings);
 

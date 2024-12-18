@@ -38,6 +38,7 @@ const LoginPage = () => {
             token: data.token
           })
         )
+        alert("Login successful!")
         navigate("/")
       }
     } catch (error) {

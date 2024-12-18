@@ -45,7 +45,7 @@ const ListingDetails = () => {
 
 
     /**Booking Calendar */
-    
+
 
     const [dateRange, setDateRange] = useState([
         {
@@ -63,7 +63,7 @@ const ListingDetails = () => {
 
     //month logic
     /** Booking Logic */
-   
+
 
     //day logic
 
@@ -132,6 +132,7 @@ const ListingDetails = () => {
                 <div className="profile">
                     <img src={`http://localhost:3001/${listing.creator.profileImagePath.replace("public", "")}`} alt="profile photo" />
                     <h3>Hosted by {listing.creator.firstName} {listing.creator.lastName}</h3>
+                    <h3>Call: {listing.creator.number}</h3>
                 </div>
                 <hr />
                 <h3>Description</h3>

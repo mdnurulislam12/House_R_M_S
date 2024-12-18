@@ -7,6 +7,7 @@ const Registation = () => {
     firstName: "",
     lastName: "",
     email: "",
+    number: "",
     password: "",
     confirmPassword:"",
     profileImage: null,
@@ -45,13 +46,10 @@ const Registation = () => {
         body: register_form
       })
 
-      const result = await response.json();
 
       if(response.ok){
         alert("Registration successful! Please check your email to verify your account.")
         navigate("/login")
-      }else{
-        alert(result.message || "Registration failed!");
       }
     }catch(err){
       console.log("Registration failed", err.message)
@@ -65,8 +63,8 @@ const Registation = () => {
         <form className='register_content_form' onSubmit={handleSubmit} >
           <input onChange={handleChange} placeholder='First Name' name='firstName' value={formData.firstName} required />
           <input onChange={handleChange} placeholder='Last Name' name='lastName' value={formData.lastName} required />
-          <input onChange={handleChange} placeholder='Email' name='email' type='email'
-         value={formData.email} required />
+          <input onChange={handleChange} placeholder='Email' name='email' type='email' value={formData.email} required />
+          <input onChange={handleChange} placeholder='Phone number' name='number' type='number' value={formData.number} required />
           <input onChange={handleChange} placeholder='Password' name='password' type='password' value={formData.password} required />
           <input onChange={handleChange} placeholder='Confirm Password' name='confirmPassword' type='password' value={formData.confirmPassword} required />
 

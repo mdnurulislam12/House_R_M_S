@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setWishList } from '../redux/state';
 
-const ListingCard = ({ listingId, creator, listingPhotoPaths, city, province, country, category, type, price, startDate, endDate, totalPrice, booking }) => {
+const ListingCard = ({firstName, lastName, number, listingId, creator, listingPhotoPaths, city, province, country, category, type, price, startDate, endDate, totalPrice, booking }) => {
 
   console.log(creator)
   /**slider for Images */
@@ -78,12 +78,14 @@ const ListingCard = ({ listingId, creator, listingPhotoPaths, city, province, co
         {!booking ? (
           <>
             <p>{type}</p>
-            <p><span>BDT{price}</span> per night</p>
+            <p><span>BDT {price}</span></p>
           </>
         ) : (
           <>
             <p>{startDate} - {endDate}</p>
             <p>BDT{totalPrice} total</p>
+            <p>Tenant Name: {firstName} {lastName}</p>
+            <p> Phone: {number}</p>
           </>
         )}
         <button
