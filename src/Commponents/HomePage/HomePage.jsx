@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import Slide from './Slide'
 import Catagories from '../Catagories'
 import Listings from '../Listings'
+import Footer from '../Footer'
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Slide></Slide>
       <Catagories></Catagories>
       <Listings></Listings>
+      <Footer></Footer>
     </>
   )
 }

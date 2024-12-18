@@ -9,6 +9,8 @@ import TripList from './Commponents/TripList'
 import Wishlist from './Commponents/Wishlist'
 import PropertyList from './Commponents/PropertyList'
 import ReservationsLists from './Commponents/ReservationsLists'
+import CategoryPage from './Commponents/CategoryPage'
+import SearchPage from './Commponents/SearchPage'
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/create-listing' element={<CreateListing></CreateListing>} />
           <Route path='/properties/:listingId' element={<ListingDetails></ListingDetails>}></Route>
+          <Route path='/properties/category/:category' element={<CategoryPage />}></Route>
+          <Route path='/properties/search/:search' element={<SearchPage />}></Route>
           <Route path='/:userId/trips' element={<TripList></TripList>}></Route>
           <Route path='/:userId/wishList' element={<Wishlist></Wishlist>}></Route>
           <Route path='/:userId/properties' element={<PropertyList></PropertyList>}></Route>

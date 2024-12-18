@@ -2,11 +2,11 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Navbar from './Navbar/Navbar'
 import ListingCard from './ListingCard'
+import Footer from './Footer'
 
 const Wishlist = () => {
     const wishList = useSelector((state)=> state.user.wishList)
 
-    console.log(wishList)
 
     return (
     <>
@@ -20,11 +20,13 @@ const Wishlist = () => {
         city={city}
         province={province}
         country={country}
+        category={category}
         type={type}
         price={price}
         booking={booking}
          />))}
     </div>
+    <Footer />
     </>
   )
 }

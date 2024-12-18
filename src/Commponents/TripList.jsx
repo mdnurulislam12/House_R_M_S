@@ -33,7 +33,7 @@ const TripList = () => {
   return loading ? <Loader /> : (
     <>
       <Navbar />
-      <h1 className='title-list'>Your Trip List</h1>
+      <h1 className='title-list'>Your Booking List</h1>
       <div className="list">
       {TripList?.map(({listingId, hostId, startDate, endDate, totalPrice, booking=true})=><ListingCard
         listingId={listingId._id}

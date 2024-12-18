@@ -13,7 +13,6 @@ function Navbar() {
   const dispatch = useDispatch()
 
   const [search, setSearch] = useState('')
-
   const navigate = useNavigate()
 
   return (
@@ -21,9 +20,9 @@ function Navbar() {
         <a href="/"><img src="../public/assets/logo.png" alt="logo" /></a>
 
         <div className="navbar_search">
-            <input type="text" placeholder='search...' />
-            <IconButton>
-                <Search className='navbar_search_seicon' />
+            <input type="text" placeholder='search...' value={search} onChange={(e)=> setSearch(e.target.value)} />
+            <IconButton disabled={search === ""}>
+                <Search className='navbar_search_seicon' onClick={()=> {navigate(`/properties/search/${search}`)}} />
             </IconButton>
         </div>
         
@@ -50,7 +49,7 @@ function Navbar() {
           {
             dropdownMenu && user && (
               <div className="navbar_right_accountmenu">
-                <Link to={`/${user._id}/trips`}>Trip List</Link>
+                <Link to={`/${user._id}/trips`}>Booking List</Link>
                 <Link to={`/${user._id}/wishList`}>Wish List</Link>
                 <Link to={`/${user._id}/properties`}>Property List</Link>
                 <Link to={`/${user._id}/reservations`}>Reservation List</Link>

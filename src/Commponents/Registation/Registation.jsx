@@ -45,11 +45,17 @@ const Registation = () => {
         body: register_form
       })
 
+      const result = await response.json();
+
       if(response.ok){
+        alert("Registration successful! Please check your email to verify your account.")
         navigate("/login")
+      }else{
+        alert(result.message || "Registration failed!");
       }
     }catch(err){
       console.log("Registration failed", err.message)
+      alert("Registration failed! plaese try again")
     }
   }
 

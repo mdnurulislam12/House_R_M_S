@@ -182,8 +182,8 @@ const CreateListing = () => {
 
                     <div className="half">
                         <div className="location">
-                            <p>Apartment, Suite, etc. (if applicable)</p>
-                            <input type="text" placeholder='Apt, Suite, etc. (if applicable)' name='aptSuite' value={formLocation.aptSuite} onChange={handleChangeLocation} required />
+                            <p>Apartment, Flat, etc. (if applicable)</p>
+                            <input type="text" placeholder='Apt, Flat, etc. (if applicable)' name='aptSuite' value={formLocation.aptSuite} onChange={handleChangeLocation} required />
                         </div>
 
                         <div className="location">
@@ -194,8 +194,8 @@ const CreateListing = () => {
 
                     <div className="half">
                         <div className="location">
-                            <p>Province</p>
-                            <input type="text" placeholder='Province' name='province' value={formLocation.province} onChange={handleChangeLocation} required />
+                            <p>Division</p>
+                            <input type="text" placeholder='Division' name='province' value={formLocation.province} onChange={handleChangeLocation} required />
                         </div>
 
                         <div className="location">
@@ -219,7 +219,7 @@ const CreateListing = () => {
                             </div>
                         </div>
                         <div className="basic">
-                            <p>Badroom</p>
+                            <p>Kitchen room</p>
                             <div className="basic_count">
                                 <RemoveCircleOutline className='cou_icon' onClick={()=>{
                                     badroomCount > 1 && setBadroomCount(badroomCount - 1)
@@ -362,7 +362,7 @@ const CreateListing = () => {
                         <p>Highlight details</p>
                         <textarea type="text" placeholder='Highlight details' name='highlightDesc' value={formDescription.highlightDesc} onChange={handleChangeDescription} required />
                         <p>Now, set your Price</p>
-                        <span>$</span>
+                        <span>BDT</span>
                         <input type="number" placeholder='100' name='price' className='price' value={formDescription.price} onChange={handleChangeDescription} required />
                     </div>
                 </div> 

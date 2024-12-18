@@ -31,7 +31,7 @@ const ListingCard = ({ listingId, creator, listingPhotoPaths, city, province, co
   /**add to wishlist */
   const user = useSelector((state) => state.user);
   const wishList = user?.wishList || [];
-  console.log(wishList)
+  
   const isLiked = wishList?.find((item) => item?._id === listingId);
 
   const patchWishList = async () => {
@@ -50,56 +50,58 @@ const ListingCard = ({ listingId, creator, listingPhotoPaths, city, province, co
   }
 
   return (
-    <div className="listing-card"
-      onClick={() => {
-        navigate(`/properties/${listingId}`)
-      }}
-    >
-      <div className="slider-container">
-        <div className="slider" style={{ transform: `translateX(-${currentIndex * 100}%)` }} >
-          {listingPhotoPaths?.map((photo, index) => (
-            <div className="slide">
-              <img src={`http://localhost:3001/${photo?.replace("public", "")}`} alt={`photo ${index + 1}`} />
-              <div className="prev-button" onClick={(e) => { e.stopPropagation(); goToPrevSlide(e) }}>
-                <ArrowBackIosNew className='arrow-icon' ></ArrowBackIosNew>
-              </div>
-              <div className="next-button" onClick={(e) => { e.stopPropagation(); goToNextSlide(e) }}>
-
-                <ArrowForwardIos className='arrow-icon'></ArrowForwardIos>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <h3>{city}, {province}, {country}</h3>
-      <p>{category}</p>
-      {!booking ? (
-        <>
-          <p>{type}</p>
-          <p><span>${price}</span> per night</p>
-        </>
-      ) : (
-        <>
-          <p>{startDate} - {endDate}</p>
-          <p>${totalPrice} total</p>
-        </>
-      )}
-      <button
-        className="favorite"
-        onClick={(e) => {
-          e.stopPropagation();
-          patchWishList();
+    <>
+      <div className="listing-card"
+        onClick={() => {
+          navigate(`/properties/${listingId}`)
         }}
-        disabled={!user}
       >
-        {isLiked ? (
-          <Favorite sx={{ color: "red" }} />
+        <div className="slider-container">
+          <div className="slider" style={{ transform: `translateX(-${currentIndex * 100}%)` }} >
+            {listingPhotoPaths?.map((photo, index) => (
+              <div className="slide">
+                <img src={`http://localhost:3001/${photo?.replace("public", "")}`} alt={`photo ${index + 1}`} />
+                <div className="prev-button" onClick={(e) => { e.stopPropagation(); goToPrevSlide(e) }}>
+                  <ArrowBackIosNew className='arrow-icon' ></ArrowBackIosNew>
+                </div>
+                <div className="next-button" onClick={(e) => { e.stopPropagation(); goToNextSlide(e) }}>
+
+                  <ArrowForwardIos className='arrow-icon'></ArrowForwardIos>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <h3>{city}, {province}, {country}</h3>
+        <p>{category}</p>
+        {!booking ? (
+          <>
+            <p>{type}</p>
+            <p><span>BDT{price}</span> per night</p>
+          </>
         ) : (
-          <Favorite sx={{ color: "white" }} />
+          <>
+            <p>{startDate} - {endDate}</p>
+            <p>BDT{totalPrice} total</p>
+          </>
         )}
-      </button>
-    </div>
+        <button
+          className="favorite"
+          onClick={(e) => {
+            e.stopPropagation();
+            patchWishList();
+          }}
+          disabled={!user}
+        >
+          {isLiked ? (
+            <Favorite sx={{ color: "red" }} />
+          ) : (
+            <Favorite sx={{ color: "white" }} />
+          )}
+        </button>
+      </div>
+    </>
   )
 }
 

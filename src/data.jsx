@@ -1,16 +1,8 @@
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
+import {GiSpookyHouse } from "react-icons/gi";
+import { PiBuildingOffice, PiBuildingApartmentBold } from "react-icons/pi";
+import { TbHomeLink } from "react-icons/tb";
 import {
-  GiBarn,
-  GiBoatFishing,
-  GiCactus,
-  GiCastle,
-  GiCaveEntrance,
-  GiForestCamp,
-  GiIsland,
-  GiWindmill,
-} from "react-icons/gi";
-import {
-  FaSkiing,
   FaPumpSoap,
   FaShower,
   FaFireExtinguisher,
@@ -18,6 +10,8 @@ import {
   FaKey,
 } from "react-icons/fa";
 import { FaHouseUser, FaPeopleRoof, FaKitchenSet } from "react-icons/fa6";
+import {FaChartArea } from "react-icons/fa";
+import {IoMdBed } from "react-icons/io"
 import {
   BiSolidWasher,
   BiSolidDryer,
@@ -27,8 +21,7 @@ import {
   BiWorld,
 } from "react-icons/bi";
 import { BsSnow, BsFillDoorOpenFill, BsPersonWorkspace } from "react-icons/bs";
-import { IoDiamond } from "react-icons/io5";
-import { MdOutlineVilla, MdMicrowave, MdBalcony, MdYard, MdPets } from "react-icons/md";
+import { MdOutlineFamilyRestroom, MdOutlineAddHomeWork, MdOutlineMap, MdMicrowave, MdBalcony, MdYard, MdPets } from "react-icons/md";
 import {
   PiBathtubFill,
   PiCoatHangerFill,
@@ -50,95 +43,60 @@ export const categories = [
     icon: <BiWorld></BiWorld>
   },
   {
-    img: "assets/beach_cat.jpg",
-    label: "Beachfront",
-    icon: <TbBeach />,
+    img: "assets/flat.jpg",
+    label: "Flats",
+    icon: <PiBuildingApartmentBold />,
     description: "This property is close to the beach!",
   },
   {
-    img: "assets/windmill_cat.webp",
-    label: "Windmills",
-    icon: <GiWindmill />,
+    img: "assets/duplex.jpg",
+    label: "Duplex Home",
+    icon: <GiSpookyHouse  />,
     description: "This property is has windmills!",
   },
   {
-    img: "assets/modern_cat.webp",
-    label: "Iconic cities",
-    icon: <MdOutlineVilla />,
+    img: "assets/plot.jpg",
+    label: "Plot",
+    icon: <MdOutlineMap />,
     description: "This property is modern!",
   },
   {
-    img: "assets/countryside_cat.webp",
-    label: "Countryside",
-    icon: <TbMountain />,
+    img: "assets/factory.jpg",
+    label: "Industrial Space",
+    icon: <FaChartArea  />,
     description: "This property is in the countryside!",
   },
   {
     img: "assets/pool_cat.jpg",
-    label: "Amazing Pools",
-    icon: <TbPool />,
+    label: "Family",
+    icon: <FaPeopleRoof  />,
     description: "This is property has a beautiful pool!",
   },
   {
     img: "assets/island_cat.webp",
-    label: "Islands",
-    icon: <GiIsland />,
+    label: "Bachelor",
+    icon: <FaHouseUser  />,
     description: "This property is on an island!",
   },
   {
-    img: "assets/lake_cat.webp",
-    label: "Lakefront",
-    icon: <GiBoatFishing />,
+    img: "assets/office.jpg",
+    label: "Office",
+    icon: <PiBuildingOffice />,
     description: "This property is near a lake!",
   },
   {
     img: "assets/skiing_cat.jpg",
-    label: "Ski-in/out",
-    icon: <FaSkiing />,
+    label: "Sublet",
+    icon: <MdOutlineAddHomeWork />,
     description: "This property has skiing activies!",
   },
   {
     img: "assets/castle_cat.webp",
-    label: "Castles",
-    icon: <GiCastle />,
+    label: "Hostel",
+    icon: <TbHomeLink />,
     description: "This property is an ancient castle!",
   },
-  {
-    img: "assets/cave_cat.jpg",
-    label: "Caves",
-    icon: <GiCaveEntrance />,
-    description: "This property is in a spooky cave!",
-  },
-  {
-    img: "assets/camping_cat.jpg",
-    label: "Camping",
-    icon: <GiForestCamp />,
-    description: "This property offers camping activities!",
-  },
-  {
-    img: "assets/arctic_cat.webp",
-    label: "Arctic",
-    icon: <BsSnow />,
-    description: "This property is in arctic environment!",
-  },
-  {
-    img: "assets/desert_cat.webp",
-    label: "Desert",
-    icon: <GiCactus />,
-    description: "This property is in the desert!",
-  },
-  {
-    img: "assets/barn_cat.jpg",
-    label: "Barns",
-    icon: <GiBarn />,
-    description: "This property is in a barn!",
-  },
-  {
-    img: "assets/lux_cat.jpg",
-    label: "Luxury",
-    icon: <IoDiamond />,
-    description: "This property is brand new and luxurious!",
-  },
+  
 ];
 
 export const types = [
